@@ -1,0 +1,35 @@
+{
+  "name": "F# (.NET)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Ionide.Ionide-fsharp",
+        "ms-dotnettools.csharp"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "false",
+      "installOhMyZsh": "false",
+      "installOhMyZshConfig": "false",
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "false"
+    }
+  },
+  "postCreateCommand": {
+    "dotnet_restore": "dotnet restore"
+  },
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "runArgs": [
+    "--name",
+    "my_devcontainer"
+  ]
+}
